@@ -5,14 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" >
     <script src="js/main.js" defer></script>
 </head>
 <body>
     <div class="cover">
         <img src="./cover/cover.png" alt="">
-        <button  id="power"></button>
+        <button   id="power"></button>
         <div class="container ">
-
+           <div id="status_bar">
+                <span></span>
+                <span>
+                    <i class="material-symbols-outlined">signal_cellular_alt</i>
+                    <i class="material-symbols-outlined">wifi</i>
+                    <div id="battery_indicator">
+                        <div id="indicator">100</div>
+                    </div>
+                </span>
+           </div>
         </div>
     </div>
 </body>

@@ -18,7 +18,9 @@ class Phone {
         this.container.classList.toggle("off",!this.power)
     }
     
-    constructor(){
+    constructor(default_power = false){
+
+        this.power = default_power
 
         this.container = document.querySelector(".container")
         this.power_btn = document.getElementById("power")
@@ -31,6 +33,5 @@ class Phone {
 }
 
 
-const phone = new Phone()
-
+const phone = new Phone(true)
 
