@@ -8,6 +8,7 @@ class Phone {
 
     container = null
     power_btn = null
+    battery_level = 100
 
     togglePower(){
         this.power = !this.power
@@ -17,21 +18,52 @@ class Phone {
     updatePower(){
         this.container.classList.toggle("off",!this.power)
     }
+    updateStatusBar(){
+        // battery
+        const batteryEl = document.querySelector("#battery_indicator #indicator_count")
+        const batteryElRange = document.querySelector("#battery_indicator #indicator")
+        batteryEl.innerHTML = this.battery_level
+        batteryElRange.style.width = this.battery_level + "%"
+    }
     
-    constructor(default_power = false){
+    constructor(default_power = false, battery_level = 100){
 
         this.power = default_power
+        this.battery_level = battery_level
 
         this.container = document.querySelector(".container")
         this.power_btn = document.getElementById("power")
         this.power_btn.onclick = () => this.togglePower()
         this.updatePower()
+
+        this.updateStatusBar()
+        this.updateLock()
+        setInterval(this.updateLock, 1000)
     }
 
+
+    updateLock(){
+        const lockDateEl = document.getElementById("lock_date")
+        const lockTimeEl = document.getElementById("lock_time")
+        const date = new Date()
+        const options = {
+            weekday: 'short',  
+            day: '2-digit',    
+            month: 'short'     
+        };
+        const time = date.toLocaleTimeString('en-GB', {
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false  
+        });
+        
+        lockDateEl.innerHTML = date.toLocaleDateString("en-US", options)
+        lockTimeEl.innerHTML = time
+    }
     
 
 }
 
 
-const phone = new Phone(true)
+const phone = new Phone(true,50)
 

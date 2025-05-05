@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" >
     <script src="js/main.js" defer></script>
 </head>
-<body>
+<body >
     <div class="cover">
         <img src="./cover/cover.png" alt="">
         <button   id="power"></button>
@@ -19,9 +19,23 @@
                     <i class="material-symbols-outlined">signal_cellular_alt</i>
                     <i class="material-symbols-outlined">wifi</i>
                     <div id="battery_indicator">
-                        <div id="indicator">100</div>
+                        <div id="indicator">
+                        </div>
+                        <div id="indicator_count">100</div>
                     </div>
                 </span>
+           </div>
+
+           <div id="lock_screen">
+
+               <div id="top">
+                    <h6 id="lock_date">Tue 6 May</h6>
+                   <h1 id="lock_time">12:22</h1>
+               </div>
+               <div id="bottom">
+                    <button class="material-symbols-outlined">flashlight_on</button>
+                    <button class="material-symbols-outlined">photo_camera</button>
+               </div>
            </div>
         </div>
     </div>
