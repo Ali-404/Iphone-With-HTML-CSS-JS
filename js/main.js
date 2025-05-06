@@ -24,12 +24,22 @@ class Phone {
         const batteryElRange = document.querySelector("#battery_indicator #indicator")
         batteryEl.innerHTML = this.battery_level
         batteryElRange.style.width = this.battery_level + "%"
+        if (this.battery_level >= 100){
+            batteryElRange.style.backgroundColor = "green"
+        }else if (this.battery_level > 20){
+            batteryElRange.style.backgroundColor = "white"
+            batteryEl.style.color = "black"
+            batteryEl.style.textShadow = "none"
+        }else {
+            batteryElRange.style.backgroundColor = "red"
+        }
     }
     
     constructor(default_power = false, battery_level = 100){
 
         this.power = default_power
         this.battery_level = battery_level
+
 
         this.container = document.querySelector(".container")
         this.power_btn = document.getElementById("power")
@@ -39,6 +49,12 @@ class Phone {
         this.updateStatusBar()
         this.updateLock()
         setInterval(this.updateLock, 1000)
+    }
+
+
+    setBatteryLevel(level){
+        this.battery_level = level
+        this.updateStatusBar()
     }
 
 
@@ -65,5 +81,5 @@ class Phone {
 }
 
 
-const phone = new Phone(true,50)
-
+const phone = new Phone(true)
+phone.setBatteryLevel(19)
