@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/settings_screen.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" >
     <script src="js/main.js" defer></script>
 </head>
@@ -13,7 +14,7 @@
         <img src="./cover/cover.png" alt="">
         <button   id="power"></button>
         <div class="container ">
-           <div id="status_bar">
+           <div id="status_bar" >
                 <span></span>
                 <span>
                     <i class="material-symbols-outlined">signal_cellular_alt</i>
@@ -26,8 +27,13 @@
                 </span>
            </div>
 
-           <div id="lock_screen" class="screen indicator light" >
 
+           <div id="settings_screen" class="screen glossy "></div>
+
+
+           <div id="lock_screen" class="screen indicator light" >
+ 
+        
                <div id="top">
                     <h6 id="lock_date">Tue 6 May</h6>
                    <h1 id="lock_time">12:22</h1>
@@ -37,7 +43,12 @@
                     <button class="material-symbols-outlined">photo_camera</button>
                </div>
            </div>
+
+
+
         </div>
     </div>
+
+    <p id="console_log"></p>
 </body>
 </html>

@@ -87,13 +87,14 @@ body {
 #status_bar {
     position: absolute;
     width: 100%;
+    height: 40px;
     top: 0;
     left: 0;
     padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 100;
+    z-index: 10000000000000000;
     
 }
 
@@ -157,6 +158,7 @@ body {
 }
 
 .screen {
+    
     position: relative;
     flex: 1;
     display: flex;
@@ -221,4 +223,9 @@ body {
     border: none;
     outline: none;
     
+}
+
+.glossy {
+    background-color: rgba(255,255,255,0.2) !important;
+    backdrop-filter: blur(90px);
 }
